@@ -1,6 +1,3 @@
-app.get("/", (req, res) => {
-  res.send("Backend is running ✅");
-});
 require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
@@ -13,6 +10,9 @@ const PORT = process.env.PORT || 3000; // Use environment port for deployment
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("Backend is running ✅");
+});
 
 // Serve static files with correct absolute path
 app.use(express.static(path.join(__dirname, 'public')));
